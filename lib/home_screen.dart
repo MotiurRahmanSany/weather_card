@@ -10,31 +10,38 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 10, top: 7),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
+                left: 15,
+              ),
               child: Text(
-                'How was your day Mr. Arif Foysal Bin Haider?',
+                'How was your day?',
                 style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16,
+                  color: Colors.black.withOpacity(.6),
+                  fontSize: 17,
                 ),
               ),
             ),
-            const SizedBox(height: 15),
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Container(
                 width: double.infinity,
-                height: 160,
+                height: 145,
                 decoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(15),
+                  ),
+                  gradient: const LinearGradient(
+                    colors: [Colors.blueGrey, Colors.grey],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
                   boxShadow: [
                     BoxShadow(
+                      blurRadius: 15,
+                      offset: const Offset(6, 6),
                       color: Colors.grey.withOpacity(.9),
-                      blurRadius: 4,
-                      // blurStyle: BlurStyle.outer,
-                      offset: const Offset(3, 3),
                     ),
                   ],
                 ),
@@ -42,33 +49,32 @@ class HomeScreen extends StatelessWidget {
                   clipBehavior: Clip.none,
                   children: [
                     const Positioned(
-                      top: 15,
-                      left: 20,
+                      top: 20,
+                      left: 15,
                       child: Text(
                         '30°',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 60,
+                          fontSize: 55,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
                     Positioned(
-                      top: -25,
-                      right: 15,
+                      top: -30,
+                      right: 5,
                       child: Image.asset(
                         'assets/weatherIcon.png',
-                        height: 110,
+                        height: 120,
                       ),
                     ),
                     const Positioned(
-                      bottom: 18,
-                      left: 15,
+                      bottom: 20,
+                      left: 10,
                       child: Text(
-                        'Feels like 32° /Partly Cloudy,',
+                        'Feels like 32° / Partly Cloudy.',
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
                         ),
                       ),
                     ),
